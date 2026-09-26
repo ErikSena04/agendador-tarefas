@@ -1,6 +1,6 @@
 package com.eriksena.agendador_tarefas.business.mapper;
 
-import com.eriksena.agendador_tarefas.business.dtos.TarefasDTO;
+import com.eriksena.agendador_tarefas.business.dtos.TarefasDTORecord;
 import com.eriksena.agendador_tarefas.infrastructure.entity.TarefasEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -14,11 +14,11 @@ public interface TarefasConverter {
     @Mapping(source = "id", target = "id")
     @Mapping(source = "dataEvento", target = "dataEvento")
     @Mapping(source = "dataCriacao", target = "dataCriacao")
-    TarefasEntity paraTarefaEntity(TarefasDTO tarefaDTO);
+    TarefasEntity paraTarefaEntity(TarefasDTORecord tarefaDTO);
 
-    TarefasDTO paraTarefaDTO(TarefasEntity tarefaEntity);
+    TarefasDTORecord paraTarefaDTORecord(TarefasEntity tarefaEntity);
 
-    List<TarefasEntity> paraListaTarefasEntity(List<TarefasDTO> tarefasDTO);
+    List<TarefasEntity> paraListaTarefasEntity(List<TarefasDTORecord> tarefasDTO);
 
-    List<TarefasDTO> paraListaTarefasDTO(List<TarefasEntity> tarefasEntities);
+    List<TarefasDTORecord> paraListaTarefasDTORecord(List<TarefasEntity> tarefasEntities);
 }
